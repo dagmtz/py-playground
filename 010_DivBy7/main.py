@@ -10,19 +10,18 @@
 # of 7, then, the original number ("abc") is also divisible by 7.
 
 def is_divisible_by_7(number):
+    print(f"Is {number} divisible by 7?... ")
     if number < 70:
         if (number % 7) == 0:
             print("It is divisible by 7! :)")
         else:
             print("It is not divisible by 7! :(")
     else:
-        op1 = str(number)
-        nlength = len(op1)-1
-        op2 = int(op1[:nlength])
-        op1 = int(op1[nlength])
-        op3 = op2 - 2*op1
-        print(f"{op2}-{op1}={op3}")
-        is_divisible_by_7(op1)
+        print(f"Well, first... ")
+        units = number % 10
+        number = int(number / 10)
+        number = number - (2 * units)
+        is_divisible_by_7(number)
 
 num = input("Enter a positive integer!: ")
 num = int(num)
